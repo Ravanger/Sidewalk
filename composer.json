@@ -1,0 +1,5 @@
+{
+    "require": {
+        "bissolli/twitter-php-scraper": "^1.2"
+    }
+}
