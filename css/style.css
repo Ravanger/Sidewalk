@@ -3,6 +3,14 @@ body {
     font-weight: bold;
     color: white;
     text-shadow: 1px 0.36px 0.36px #11b2e7;
+    font-size: 0.8rem;
+    background-color: black;
+    height: 100vh;
+}
+
+form {
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 h2 {
@@ -15,14 +23,36 @@ a {
 }
 
 img {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
+}
+
+.theWrapper {
+    position: absolute;
+    width: 640px;
+    height: 50%;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 #faceTracker {
     position: absolute;
     z-index: -1;
+}
+
+#dataOverlay {
+    position: relative;
+    z-index: 1;
+}
+
+#recentTweets {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }
 
 .infoSize {
@@ -32,7 +62,27 @@ img {
 }
 
 .bluebox {
-    padding: 1rem;
+    padding: 0.7rem;
     background-color: rgba(17, 178, 231, 0.25);
-    display: inline-block;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.mb {
+    margin-bottom: 0.3rem;
+}
+
+.tweettext {
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    width: 30%;
+    float: left;
+}
+
+.right {
+    width: 70%;
+    float: right;
 }
