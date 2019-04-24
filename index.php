@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Detect yo face</title>
+    <title>The Watcher</title>
     <script src="js/camvas.js"></script>
     <script src="js/pico.js"></script>
     <script src="js/facedetect.js"></script>
