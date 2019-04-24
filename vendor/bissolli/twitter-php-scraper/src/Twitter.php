@@ -27,6 +27,7 @@ class Twitter extends TwitterAbstract
         $this->setDomHtml($dom);
 
         $this->extractProfileCard();
+        $this->loadTweets();
 
         return $this;
     }
@@ -84,7 +85,7 @@ class Twitter extends TwitterAbstract
                     [
                     'id' => $tweet->{'data-tweet-id'},
                     'username' => $tweet->{'data-screen-name'},
-                    'is_retweet' => count($tweet->find('.js-retweet-text')[0]) > 0,
+                    // 'is_retweet' => count($tweet->find('.js-retweet-text')[0]) > 0,
                     'content' => $this->sanitizeNodeText($tweet->find('.tweet-text')[0]),
                     /*'content' => $this->sanitizeNodeAttr($tweet->find('.js-macaw-cards-iframe-container')[0], 'data-card-url'),*/
                     /*'content' => $this->sanitizeNodeAttr($tweet->find('.AdaptiveMedia-photoContainer')[0], 'data-image-url'),*/

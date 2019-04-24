@@ -97,7 +97,30 @@ abstract class TwitterAbstract
      */
     public function getTwitterAccountBirthday()
     {
-        return $this->profile['dateOfBirth'];
+        if (!$this->profile['dateOfBirth']) {
+            return;
+        }
+        return $this->profile['dateOfBirth']->text();
+    }
+
+    /**
+     * Return number of tweets in array
+     */
+    public function getTweetsAmount()
+    {
+        return count($this->tweets);
+    }
+
+    /**
+     * Return tweet content
+     */
+    public function getTweetContent($index)
+    {
+        if (!$this->tweets[$index]['content']) {
+            return;
+        }
+        
+        return $this->tweets[$index]['content'];
     }
     
     /**

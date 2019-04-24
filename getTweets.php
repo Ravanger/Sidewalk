@@ -2,7 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$account = new \Bissolli\TwitterScraper\Twitter('BRossovsky');
+$account = new \Bissolli\TwitterScraper\Twitter('twitter');
 
 $account->loadTweets();
 

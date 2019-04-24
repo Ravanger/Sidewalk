@@ -1,6 +1,6 @@
 var initialized = false;
 
-function button_callback(account) { 
+function button_callback(account) {
     /*
         (0) check whether we're already running face detection
     */
@@ -62,7 +62,6 @@ function button_callback(account) {
         dets = pico.run_cascade(image, facefinder_classify_region, params);
         dets = update_memory(dets);
         dets = pico.cluster_detections(dets, 0.2); // set IoU threshold to 0.2
-        console.log(dets);
         
         // draw detections
         for (i = 0; i < dets.length; ++i)
@@ -72,7 +71,13 @@ function button_callback(account) {
             if (dets[i][3] > 50.0) {
                 // dets[i][1] - X coord of center of face
                 // dets[i][0] - Y coord of center of face
-                DrawAroundFace(ctx, "Hello, " + account["name"] + "!", dets[i][1], dets[i][0] - 150);
+
+                //1. Draw avatar
+                // DrawImageAroundFace(ctx, account["avatar"], dets[i][1] + 120, dets[i][0] - 100)
+                //2. Draw name
+                DrawTextAroundFace(ctx, account["name"], dets[i][1] + 145, dets[i][0] - 100);
+                //3. Draw birthdate
+                DrawTextAroundFace(ctx, account["birthday"], dets[i][1] + 140, dets[i][0] - 80);
             }
     }
     /*
@@ -85,9 +90,31 @@ function button_callback(account) {
     initialized = true;
 }
 
-function DrawAroundFace(drawingContext, displayText = "test", x, y) {
-    drawingContext.font = "28px Georgia";
-    drawingContext.fillStyle = "fuchsia";
-    drawingContext.textAlign = "center";
+function DrawTextAroundFace(drawingContext, displayText, x, y) {
+    if (!displayText) {
+        return;
+    }
+
+    drawingContext.font = "18px Quicksand bold";
+    drawingContext.textBaseline = "middle";
+    drawingContext.fillStyle = "white";
+    drawingContext.textAlign = "left";
+    drawingContext.shadowColor = "#11b2e7";
+    drawingContext.shadowOffsetX = 1;
+    drawingContext.shadowOffsetY = 0.36;
+    drawingContext.shadowBlur = 0.36;
     drawingContext.fillText(displayText, x, y);
+}
+
+function DrawImageAroundFace(drawingContext, displayImage, x, y) {
+    if (!displayImage) {
+        return;
+    }
+
+    var image = new Image();
+    image.onload = function()
+    {
+        drawingContext.drawImage(image, x, y, 50, 50);
+    }
+    image.src = displayImage;
 }
