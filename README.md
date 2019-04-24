@@ -22,7 +22,7 @@ None
 * **Boris Rossovsky** - *Development, design, and concept* - [Boris](https://www.borisr.dev/)
 * **Kiefer Ortuoste** - *Design and concept* - [Kiefer](https://www.kieferortuoste.com/)
 * **Aaron DeRoche** - *Design and concept* - [Aaron](https://www.deroche.design/)
-* **Bohn Noble** - *Design and concept* - [Bohn](http://www.bohnnoble.com/)
+* **Bohn Noble** - *Design and concept* - [Bohn](https://www.linkedin.com/in/bohn-noble/)
 
 ## License
 
