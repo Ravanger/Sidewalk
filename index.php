@@ -50,13 +50,15 @@
         <div class="infoWrapper infoSize">
             <canvas width=640 height=480 id="faceTracker"></canvas>
             <div id="dataOverlay" class="infoSize">
-                <div class="bluebox">
-                    <h2>Bio</h2>
-                    <?php echo $account->getTwitterAccountBio(); ?>
-                </div>
-                <div>
-                    <a href="<?php echo $account->getTwitterAccountWebsite(); ?>"
-                        target="_blank"><?php echo $account->getTwitterAccountWebsite(); ?></a>
+                <div id="userBio">
+                    <div class="padded bluebox">
+                        <h2>Bio</h2>
+                        <?php echo $account->getTwitterAccountBio(); ?>
+                    </div>
+                    <div class="padded mt">
+                        <a href="<?php echo $account->getTwitterAccountWebsite(); ?>"
+                            target="_blank"><?php echo $account->getTwitterAccountWebsite(); ?></a>
+                    </div>
                 </div>
                 <div id="recentTweets">
                     <h2>Recent</h2>
@@ -64,7 +66,7 @@
                         $contentCounter = 0;
                         for ($i = 0; $i < $account->getTweetsAmount() && $contentCounter < 3; $i++) {
                             if ($account->getTweetContent($i)) {
-                                echo '<div class="bluebox mb tweettext">';
+                                echo '<div class="padded bluebox mb tweettext">';
                                     echo '<div class="left">';
                                         echo '<img src="'. $account->getTwitterAvatarURL() .'">';
                                     echo '</div>';

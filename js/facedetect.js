@@ -75,9 +75,9 @@ function button_callback(account) {
                 //1. Draw avatar
                 // DrawImageAroundFace(ctx, account["avatar"], dets[i][1] + 120, dets[i][0] - 100)
                 //2. Draw name
-                DrawTextAroundFace(ctx, account["name"], dets[i][1] + 145, dets[i][0] - 100);
+                DrawTextAroundFace(ctx, account["name"], dets[i][1] - 195, dets[i][0] - 50);
                 //3. Draw birthdate
-                DrawTextAroundFace(ctx, account["birthday"], dets[i][1] + 140, dets[i][0] - 80);
+                DrawTextAroundFace(ctx, account["birthday"], dets[i][1] - 200, dets[i][0] - 30);
             }
     }
     /*

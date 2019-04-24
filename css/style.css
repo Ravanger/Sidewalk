@@ -16,6 +16,7 @@ form {
 
 h2 {
     margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 
 a {
@@ -54,6 +55,13 @@ img {
     position: absolute;
     bottom: 0px;
     right: 0px;
+    margin-bottom: 0.2rem;
+    margin-right: 0.5rem;
+}
+
+#userBio {
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 .infoSize {
@@ -62,8 +70,11 @@ img {
     overflow: hidden;
 }
 
-.bluebox {
+.padded {
     padding: 0.7rem;
+}
+
+.bluebox {
     background-color: rgba(17, 178, 231, 0.25);
     max-width: 200px;
     overflow: hidden;
@@ -73,9 +84,18 @@ img {
     margin-bottom: 0.3rem;
 }
 
+.mt {
+    margin-top: 0.3rem;
+}
+
+.margin-bottom-right {
+    margin-bottom: 1rem;
+}
+
 .tweettext {
     display: flex;
     align-items: center;
+    font-size: 0.6rem;
 }
 
 .left {
