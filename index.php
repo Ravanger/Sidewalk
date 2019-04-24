@@ -8,7 +8,7 @@
     <script src="js/camvas.js"></script>
     <script src="js/pico.js"></script>
     <script src="js/facedetect.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -51,7 +51,7 @@
             <canvas width=640 height=480 id="faceTracker"></canvas>
             <div id="dataOverlay" class="infoSize">
                 <div id="userBio">
-                    <div class="padded bluebox">
+                    <div class="padded bgbox">
                         <h2>Bio</h2>
                         <?php echo $account->getTwitterAccountBio(); ?>
                     </div>
@@ -66,7 +66,7 @@
                         $contentCounter = 0;
                         for ($i = 0; $i < $account->getTweetsAmount() && $contentCounter < 3; $i++) {
                             if ($account->getTweetContent($i)) {
-                                echo '<div class="padded bluebox mb tweettext">';
+                                echo '<div class="padded bgbox mb tweettext">';
                                     echo '<div class="left">';
                                         echo '<img src="'. $account->getTwitterAvatarURL() .'">';
                                     echo '</div>';

@@ -1,5 +1,5 @@
 body {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Source Code Pro', monospace;
     font-weight: bold;
     color: white;
     text-shadow: 1px 0.36px 0.36px #11b2e7;
@@ -74,8 +74,8 @@ img {
     padding: 0.7rem;
 }
 
-.bluebox {
-    background-color: rgba(17, 178, 231, 0.25);
+.bgbox {
+    background-color: rgba(0, 0, 0, 0.5);
     max-width: 200px;
     overflow: hidden;
 }

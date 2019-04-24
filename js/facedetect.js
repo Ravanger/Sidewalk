@@ -13,8 +13,7 @@ function button_callback(account) {
     var facefinder_classify_region = function (r, c, s, pixels, ldim) {
         return -1.0;
     };
-    var cascadeurl =
-        'https://raw.githubusercontent.com/nenadmarkus/pico/c2e81f9d23cc11d1a612fd21e4f9de0921a5d0d9/rnt/cascades/facefinder';
+    var cascadeurl = 'facefinder';
     fetch(cascadeurl).then(function (response) {
         response.arrayBuffer().then(function (buffer) {
             var bytes = new Int8Array(buffer);
@@ -42,13 +41,13 @@ function button_callback(account) {
     var processfn = function (video, dt) {
         // render the video frame to the canvas element and extract RGBA pixel data
         ctx.drawImage(video, 0, 0);
-        var rgba = ctx.getImageData(0, 0, 720, 960).data;
+        var rgba = ctx.getImageData(0, 0, 480, 640).data;
         // prepare input to `run_cascade`
         image = {
-            "pixels": rgba_to_grayscale(rgba, 960, 720),
-            "nrows": 960,
-            "ncols": 720,
-            "ldim": 720
+            "pixels": rgba_to_grayscale(rgba, 480, 640),
+            "nrows": 480,
+            "ncols": 640,
+            "ldim": 480
         }
         params = {
             "shiftfactor": 0.1, // move the detection window by 10% of its size
