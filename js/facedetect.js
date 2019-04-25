@@ -1,6 +1,16 @@
 var initialized = false;
 
-function button_callback(account) {
+function button_callback(account, tweetCount) {
+    document.getElementById("theWrapper").classList.remove("hidden");
+
+    if (!tweetCount || tweetCount === 0) {
+        document.getElementById("lockOverlay").classList.remove("hidden");
+        document.getElementById("dataOverlay").classList.add("hidden");
+    }
+    else {
+        document.getElementById("lockOverlay").classList.add("hidden");
+        document.getElementById("dataOverlay").classList.remove("hidden");
+    }
     /*
         (0) check whether we're already running face detection
     */
@@ -116,4 +126,12 @@ function DrawImageAroundFace(drawingContext, displayImage, x, y) {
         drawingContext.drawImage(image, x, y, 50, 50);
     }
     image.src = displayImage;
+}
+
+document.onkeyup = function(e) {
+    //F2
+    if (window.event && window.event.keyCode == 113) {
+        document.getElementById("twitterusername").select();
+        document.getElementById("twitterusername").focus();
+    }
 }
